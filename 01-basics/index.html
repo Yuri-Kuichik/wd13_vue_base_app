@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../img/favicon.ico">
+    <title>Basics App</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+    <div id="app1">
+        <!--START COUNTER BUTTONS -->
+        <div class="container pt-5">
+            <div class="card center">
+                <h2>
+                    {{ titleCounter }}:
+                    <!-- здесь должно быть свойство count -->
+                </h2>
+                <div>
+                    <button class="btn primary">
+                        Increase
+                    </button>
+                    <button class="btn danger">
+                        Decrease
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--END COUNTER BUTTONS -->
+
+
+        <!--START CALCULATOR -->
+        <div class="container pt-5">
+            <div class="card">
+                <h2>{{ titleCalculator }}</h2>
+                <div class="col form-control calc">
+                <input type="number"/>
+
+                <div class="calc-actions">
+                    <button class="calc-btn" v-on:click="operator = 'sum'">
+                        <span> ➕ </span>
+                    </button>
+                    <button class="calc-btn" v-on:click="operator = 'subtract'">
+                        <span> ➖ </span>
+                    </button>
+                    <button class="calc-btn" v-on:click="operator = 'multiply'">
+                        <span> ✖ </span>
+                    </button>
+                    <button class="calc-btn" v-on:click="operator = 'divide'">
+                        <span> ➗ </span>
+                    </button>
+                </div>
+
+                <input type="number"/>
+
+                <!-- в result лучше использовать computed свойство -->
+                <h3>Result: 0</h3>
+            </div> 
+            </div>
+        </div>
+        <!--END CALCULATOR -->
+    </div>
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
