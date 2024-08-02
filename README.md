@@ -5,6 +5,11 @@
 git clone (url from github)
 ```
 
+## Перейти в папку проекта
+```sh
+cd .\wd13_vue_base_app\
+```
+
 ## Создать свою ветку (это ваша ветка "main")
 ```sh
 git checkout -b branchName (branchName = your full name)
@@ -35,3 +40,4 @@ git push origin branchName-hw1
 git checkout branchName
 git pull origin main
 ```
+
