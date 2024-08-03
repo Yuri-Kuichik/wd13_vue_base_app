@@ -1,7 +1,7 @@
 const App = Vue.createApp({
     data() {
         return {
-            titleCounter: 'Counter',
+            titleCounter: 'Counter!',
             titleCalculator: 'Calculator',
             operator: '',
             countFirst: 0,
