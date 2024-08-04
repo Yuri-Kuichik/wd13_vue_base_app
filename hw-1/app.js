@@ -1,10 +1,20 @@
 const App = Vue.createApp({
     data() {
         return {
-           titleApp: 'App Vue CDN' 
+            message: 'Нажми на меня',
+            plus: '+',
+            minus: '-',
+            count: 0
+        }
+    },
+    methods: {
+        increment() {
+            this.count++
+        },
+        decrement() {
+            this.count--
         }
     }
 })
 
-
-App.mount('#app')
+App.mount('#counter')
