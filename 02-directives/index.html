@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../img/favicon.ico">
+    <title>Vue App</title>
+    <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+    <div id="posts">
+        <section class="container pt-5">
+            <div class="card center">
+                <h1>{{ titleApp }}</h1>
+                <div>
+                    <input type="text" v-model="searchString" @keyup.enter="getPosts">
+                    <!-- <button @click="getPosts">search</button> -->
+                </div>
+                <!-- сюда добавить input и button 'seasch posts'-->
+
+                <!-- здесь должна быть условная отрисовка. Если loading === true, показываем div с классом loader. Иначе - следующий div -->
+                <div v-if="loading" class="loader"></div>
+                <div v-else class="posts-list">
+                    <div v-for="post in posts" :key="'post-id_' + post.id" class="post-item">
+                        <h2>{{ post.title }}</h2>
+                        <img :src="post.image" :alt="post.title" class="post-image">
+                        <p>{{ post.description }}</p>
+                    </div>
+                    <!-- здесь должен быть список постов. Показать минимум три параметра: title, description, image -->
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
