@@ -12,7 +12,9 @@ body {
   color: #2c3e50;
   background: #a9b8b5;
 }
-
+img {
+  max-width: 100%;
+}
 hr {
   margin: 1rem 0;
 }
@@ -191,6 +193,13 @@ h3 {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.card.center h1 {
+text-align: center;
+max-width: 600px;
+font-size: 20px;
+margin: 0 auto;
 }
 
 .col {
