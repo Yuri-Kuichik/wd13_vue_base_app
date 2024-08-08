@@ -27,39 +27,9 @@ const App = Vue.createApp({
 			}
 	},
 
-	beforeCreate() {
-			console.log('beforeCreate:', this.titleApp);
-			console.log('beforeCreate:', document.querySelector('#posts'));
-	},
 	created() {
-			console.log('created:', this.titleApp);
-			console.log('created:', document.querySelector('#posts'));
-	},
-	beforeMount() {
-			console.log('beforeMount:', this.titleApp);
-			console.log('beforeMount:', document.querySelector('#posts'));
-	},
-	mounted() {
-			console.log('mounted:', this.titleApp);
-			console.log('mounted:', document.querySelector('#posts'));
 			this.getPosts();
 	},
-	beforeUpdate() {
-			console.log('beforeUpdate:', this.titleApp);
-			console.log('beforeUpdate:', document.querySelector('#posts'));
-	},
-	updated() {
-			console.log('updated:', this.titleApp);
-			console.log('updated:', document.querySelector('#posts'));
-	},
-	beforeUnmount() {
-			console.log('beforeUnmount:', this.titleApp);
-			console.log('beforeUnmount:', document.querySelector('#posts'));
-	},
-	unmounted() {
-			console.log('unmounted:', this.titleApp);
-			console.log('unmounted:', document.querySelector('#posts'));
-	}
 });
 
 App.mount('#posts');

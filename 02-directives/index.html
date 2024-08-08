@@ -25,8 +25,8 @@
 				<div v-if="loading" class="loader"></div>
 				<div v-else class="posts-list">
 					<!-- Список постов -->
-					<div v-if="posts.length > 0">
-						<div v-for="post in posts" :key="post.id" class="post-item">
+					<div v-if="posts.length">
+						<div v-for="post in posts" :key="'post-id_' + post.id" class="post-item">
 							<h2>{{ post.title }}</h2>
 							<p><small>{{ post.date }}</small></p>
 							<p v-if="post.description">{{ post.description }}</p>
