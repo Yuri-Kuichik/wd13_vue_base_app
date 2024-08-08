@@ -187,6 +187,18 @@ h3 {
   padding: 0.5rem 0;
 }
 
+.posts-list {
+  padding: 0 1rem;
+}
+
+.post-item {
+  padding-bottom: 2rem;
+}
+
+.post-item img {
+  width: 200px;
+}
+
 .row {
   display: flex;
   flex-direction: row;
