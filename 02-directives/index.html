@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" href="../img/favicon.ico">
+	<title>Vue App</title>
+	<link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+	<div id="posts">
+		<section class="container pt-5">
+			<div class="card center">
+				<h1>{{ titleApp }}</h1>
+
+				<!-- Input и button для поиска постов -->
+				<div class="search-bar">
+					<input type="text" v-model="searchString" placeholder="Search posts..." />
+					<button @click="getPosts">Search Posts</button>
+				</div>
+
+				<!-- Условная отрисовка -->
+				<div v-if="loading" class="loader"></div>
+				<div v-else class="posts-list">
+					<!-- Список постов -->
+					<div v-if="posts.length">
+						<div v-for="post in posts" :key="'post-id_' + post.id" class="post-item">
+							<h2>{{ post.title }}</h2>
+							<p><small>{{ post.date }}</small></p>
+							<p v-if="post.description">{{ post.description }}</p>
+							<img :src="post.image" v-if="post.image">
+						</div>
+					</div>
+					<div v-else>
+						<p>Ничего не найдено</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<script src="script.js"></script>
+</body>
+
+</html>
