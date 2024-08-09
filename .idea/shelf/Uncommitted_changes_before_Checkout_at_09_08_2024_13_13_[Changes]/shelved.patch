@@ -1,0 +1,35 @@
+Index: .idea/cody_history.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChatHistory\">\r\n    <accountData>\r\n      <list>\r\n        <AccountData>\r\n          <accountId value=\"VXNlcjo0NzM2OTM=\" />\r\n          <chats>\r\n            <list>\r\n              <chat>\r\n                <internalId value=\"cad2e2a4-9bac-41cb-afe2-f87e02d3ebeb\" />\r\n                <llm>\r\n                  <llm>\r\n                    <model value=\"anthropic/claude-3-sonnet-20240229\" />\r\n                    <provider value=\"Anthropic\" />\r\n                    <title value=\"Claude 3 Sonnet\" />\r\n                  </llm>\r\n                </llm>\r\n              </chat>\r\n              <chat>\r\n                <internalId value=\"0bbaff3d-f72c-422d-87d6-2281014aacb2\" />\r\n                <llm>\r\n                  <llm>\r\n                    <model value=\"anthropic/claude-3-sonnet-20240229\" />\r\n                    <provider value=\"Anthropic\" />\r\n                    <title value=\"Claude 3 Sonnet\" />\r\n                  </llm>\r\n                </llm>\r\n              </chat>\r\n            </list>\r\n          </chats>\r\n          <defaultLlm>\r\n            <llm>\r\n              <model value=\"anthropic/claude-3-sonnet-20240229\" />\r\n              <provider value=\"Anthropic\" />\r\n              <title value=\"Claude 3 Sonnet\" />\r\n            </llm>\r\n          </defaultLlm>\r\n        </AccountData>\r\n      </list>\r\n    </accountData>\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/.idea/cody_history.xml b/.idea/cody_history.xml
+--- a/.idea/cody_history.xml	
++++ b/.idea/cody_history.xml	
+@@ -27,6 +27,26 @@
+                   </llm>
+                 </llm>
+               </chat>
++              <chat>
++                <internalId value="cb5c66e2-0cad-439c-870f-fcda7c2be066" />
++                <llm>
++                  <llm>
++                    <model value="anthropic/claude-3-sonnet-20240229" />
++                    <provider value="Anthropic" />
++                    <title value="Claude 3 Sonnet" />
++                  </llm>
++                </llm>
++              </chat>
++              <chat>
++                <internalId value="d6f7d428-638b-4575-892c-0d2d03d870f3" />
++                <llm>
++                  <llm>
++                    <model value="anthropic/claude-3-sonnet-20240229" />
++                    <provider value="Anthropic" />
++                    <title value="Claude 3 Sonnet" />
++                  </llm>
++                </llm>
++              </chat>
+             </list>
+           </chats>
+           <defaultLlm>

@@ -1,0 +1,142 @@
+Index: hw-1/calculator/app.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/hw-1/calculator/app.js b/hw-1/calculator/app.js
+new file mode 100644
+--- /dev/null	
++++ b/hw-1/calculator/app.js	
+@@ -0,0 +1,32 @@
++
++
++const { createApp } = Vue;
++
++createApp({
++    data() {
++        return {
++            firstOperand: 0,
++            secondOperand: 0,
++            operator: '+'
++        };
++    },
++    computed: {
++        result() {
++            switch (this.operator) {
++                case '+':
++                    return this.firstOperand + this.secondOperand;
++                case '-':
++                    return this.firstOperand - this.secondOperand;
++                case '*':
++                    return this.firstOperand * this.secondOperand;
++                case '/':
++                    return this.secondOperand !== 0 ? this.firstOperand / this.secondOperand : 'Error';
++                default:
++                    return 'Invalid Operator';
++            }
++        }
++    }
++}).mount('#app');
++
++
++
+Index: hw-1/calculator/index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/hw-1/calculator/index.html b/hw-1/calculator/index.html
+new file mode 100644
+--- /dev/null	
++++ b/hw-1/calculator/index.html	
+@@ -0,0 +1,29 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8"/>
++    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
++    <title>Vue Calculator</title>
++    <link rel="stylesheet" href="./index.css"/>
++</head>
++<body>
++<div id="app">
++    <div id="calculator">
++        <input type="number" v-model.number="firstOperand" placeholder="Operand 1" />
++        <input type="number" v-model.number="secondOperand" placeholder="Operand 2" />
++        <div class="operators">
++            <button @click="operator = '+'">+</button>
++            <button @click="operator = '-'">-</button>
++            <button @click="operator = '*'">*</button>
++            <button @click="operator = '/'">/</button>
++        </div>
++        <div class="result">
++            <strong>Result: </strong>{{ result }}
++        </div>
++    </div>
++</div>
++
++<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
++<script src="./app.js"></script>
++</body>
++</html>
+\ No newline at end of file
+Index: hw-1/calculator/index.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/hw-1/calculator/index.css b/hw-1/calculator/index.css
+new file mode 100644
+--- /dev/null	
++++ b/hw-1/calculator/index.css	
+@@ -0,0 +1,49 @@
++body {
++    display: flex;
++    justify-content: center;
++    align-items: center;
++    height: 100vh;
++    margin: 0;
++    background-color: #f4f4f9;
++    font-family: Arial, sans-serif;
++}
++
++#calculator {
++    background-color: white;
++    padding: 30px;
++    border-radius: 10px;
++    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
++    text-align: center;
++    width: 300px;
++}
++
++input[type="number"] {
++    width: calc(100% - 20px);
++    padding: 10px;
++    margin-bottom: 20px;
++    font-size: 18px;
++    border-radius: 5px;
++    border: 1px solid #ddd;
++}
++
++.operators button {
++    margin: 5px;
++    padding: 10px 15px;
++    font-size: 16px;
++    color: white;
++    background-color: #007bff;
++    border: none;
++    border-radius: 5px;
++    cursor: pointer;
++    transition: background-color 0.3s ease;
++}
++
++.operators button:hover {
++    background-color: #0056b3;
++}
++
++.result {
++    margin-top: 20px;
++    font-size: 24px;
++    color: #333;
++}
+\ No newline at end of file

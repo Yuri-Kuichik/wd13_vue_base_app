@@ -8,6 +8,17 @@ const App = Vue.createApp({
             loading: false
         }
     },
+    computed: {
+        postFilter() {
+            if (!this.searchString) {
+                return this.posts;
+            }
+            return this.posts.filter(post => {
+                post.title.toLowerCase().includes(this.searchString.toLowerCase()) ||
+                post.description.toLowerCase().includes(this.searchString.toLowerCase())
+            });
+        }
+    },
 
     methods: {
         async getPosts() {
@@ -25,6 +36,9 @@ const App = Vue.createApp({
                     return data.results
                 })
         }
+        // updatePosts() {
+        //     this.getPosts()
+        // }
 
     },
 })
