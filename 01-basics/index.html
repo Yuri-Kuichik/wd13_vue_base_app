@@ -10,18 +10,20 @@
 
   <body>
     <div id="app1">
+
         <!--START COUNTER BUTTONS -->
         <div class="container pt-5">
             <div class="card center">
                 <h2>
-                    {{ titleCounter }}:
+                    {{ titleCounter }}:{{ count }}
                     <!-- здесь должно быть свойство count -->
                 </h2>
+
                 <div>
-                    <button class="btn primary">
+                    <button class="btn primary" @click="count++">
                         Increase
                     </button>
-                    <button class="btn danger">
+                    <button class="btn danger" @click="count--">
                         Decrease
                     </button>
                 </div>
@@ -35,7 +37,7 @@
             <div class="card">
                 <h2>{{ titleCalculator }}</h2>
                 <div class="col form-control calc">
-                <input type="number"/>
+                <input type="number" v-model="countFirst" />
 
                 <div class="calc-actions">
                     <button class="calc-btn" v-on:click="operator = 'sum'">
@@ -52,10 +54,10 @@
                     </button>
                 </div>
 
-                <input type="number"/>
+                <input type="number" v-model="countSecond"/>
 
                 <!-- в result лучше использовать computed свойство -->
-                <h3>Result: 0</h3>
+                <h3>Result: {{result}}</h3>
             </div> 
             </div>
         </div>
