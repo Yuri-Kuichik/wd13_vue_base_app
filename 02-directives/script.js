@@ -8,6 +8,7 @@ const App = Vue.createApp({
             loading: false
         }
     },
+    
 
     methods: {
         async getPosts() {
