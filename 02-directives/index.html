@@ -14,13 +14,27 @@
                 <div class="card center">
                     <h1>{{ titleApp }}</h1>
 
-                    <!-- сюда добавить input и button 'seasch posts'-->
+                    <input type="searchString" v-model="searchString" placeholder="Search posts"/>
+                    
+                    <button v-on:click="getPosts"> search posts</button>
 
+                    <!-- сюда добавить input и button 'seasch posts'-->
+                                        
                     <!-- здесь должна быть условная отрисовка. Если loading === true, показываем div с классом loader. Иначе - следующий div -->
-                    <div class="loader"></div>
-                    <div class="posts-list">
+                    <div v-if='loading' class="loader"></div>
+                    <div v-else class="posts-list">
 
                         <!-- здесь должен быть список постов. Показать минимум три параметра: title, description, image -->
+                        <div v-for="item in posts" :key="'post-id_' + item.id">
+                            <!-- post.title -->
+                            <h2>{{item.title}} </h2>
+                            <!-- post.description -->
+                            <p>{{item.description}}</p>
+                            <!-- в src вставь  post.iamge -->
+                            <img :src="item.image" alt="post image" width="200" height="200">
+                
+                        </div>
+                
 
                     </div>
                 </div>
