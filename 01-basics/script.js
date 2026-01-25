@@ -3,9 +3,6 @@ const App = Vue.createApp({
         return {
             titleCounter: 'Counter',
             titleCalculator: 'Calculator',
-            operator: '',
-            countFirst: 0,
-            countSecond: 0
         }
     }
 })
